@@ -23,6 +23,8 @@ Commands:
 	-l --link:
 		Links an app (-i) to an existing virtual cable or device (-o).
 		Required args: -i and -o.
+	-L --list:
+        List virtual cables or devices.
 	
 	-u --unlink:
 		Unlinks an app (-i) from an existing virtual cable or device (-o).
@@ -41,6 +43,7 @@ for arg in "$@"; do
     '--create')   set -- "$@" '-c'   ;;
     '--remove')     set -- "$@" '-r'   ;;
 	'--link')     set -- "$@" '-l'   ;;
+    '--list') set -- "$@" '-L' ;;
 	'--unlink')     set -- "$@" '-u'   ;;
 	'--help')     set -- "$@" '-h'   ;;
     *)          set -- "$@" "$arg" ;;
@@ -54,6 +57,7 @@ options=":i:o:a:crluCh"
 while getopts $options option; do
 	case "$option" in
 		h) echo "$usage"; exit 1;;
+	    L) exit 2 ## will list pipewire devices and exit
 		i) INPUTNAME=$OPTARG;;
 		o) OUTPUTNAME=$OPTARG;;
 		a) APPLICATION=$OPTARG;;

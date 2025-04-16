@@ -31,7 +31,10 @@ This script was created as an attempt to use my motherboards "pro audio" to cont
 	Shows this help dialogue
 ```
 
-## Planned Features 
-- Persistence using systemctl
+## Currently Working on
+- Listing Available Pipe Wire devices
 - Profiles to store settings
+
+## TODO
+- Persistence using systemctl
 - Ability to create a virtual audio input linked to an existing output device (The reason this script was made)
